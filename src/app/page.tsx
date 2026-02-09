@@ -37,7 +37,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 py-20">
         <div className="flex flex-col items-center mb-16 text-center">
           <h2 className="font-headline text-3xl md:text-5xl font-bold text-white mb-4">
-            SELECIONE SEU <span className="text-accent">COMBUSTÍVEL</span>
+            ESCOLHA SEU <span className="text-accent">"SABOR"</span>
           </h2>
           <div className="w-24 h-1 bg-accent neon-glow" />
           <p className="mt-6 text-muted-foreground max-w-xl italic">
