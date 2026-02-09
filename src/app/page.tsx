@@ -67,7 +67,7 @@ export default function Home() {
       <footer className="border-t border-border/50 py-12 bg-black/50">
         <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center space-y-4">
           <div className="font-headline text-2xl font-bold tracking-tighter text-white">
-            MAROMBA <span className="text-accent">MOONSHINE</span>
+            MANSÃO <span className="text-accent">MAROMBA</span>
           </div>
           <p className="text-xs text-muted-foreground uppercase tracking-widest">
             © 2024 Mansão Maromba - Todos os direitos reservados para a galáxia.

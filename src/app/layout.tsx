@@ -1,9 +1,8 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Maromba Moonshine | Kits Alienígenas',
+  title: 'Mansão Maromba | Kits Alienígenas',
   description: 'Experiência exclusiva de drinks da Mansão Maromba. Kits Darkness de 3 drinks.',
 };
 

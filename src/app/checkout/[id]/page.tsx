@@ -79,7 +79,7 @@ export default function CheckoutPage() {
             Voltar para a Loja
           </Link>
           <div className="font-headline text-xl font-bold tracking-tighter text-white">
-            MAROMBA <span className="text-accent">MOONSHINE</span>
+            MANSÃO <span className="text-accent">MAROMBA</span>
           </div>
         </div>
 
