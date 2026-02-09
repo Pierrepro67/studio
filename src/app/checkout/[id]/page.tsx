@@ -1,7 +1,8 @@
+
 "use client"
 
 import * as React from "react"
-import { useParams, useRouter } from "next/navigation"
+import { useParams, useRouter, useSearchParams } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
@@ -11,7 +12,7 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { ShieldCheck, Loader2, Rocket, ArrowLeft, CreditCard, QrCode } from "lucide-react"
+import { ShieldCheck, Loader2, Rocket, ArrowLeft, CreditCard, QrCode, Boxes } from "lucide-react"
 import { createOrder } from "@/app/actions/orders"
 import Link from "next/link"
 
@@ -33,13 +34,17 @@ const KITS = {
   "kit-void": { name: "SABOR ENERGÉTICO", price: 29.99 },
   "kit-nebula": { name: "SABOR ENERGÉTICO", price: 29.99 },
   "kit-plasma": { name: "SABOR ENERGÉTICO", price: 29.99 },
+  "kit-custom": { name: "Kit Personalizado Mansão Maromba", price: 29.99 },
 }
 
 export default function CheckoutPage() {
   const { id } = useParams()
+  const searchParams = useSearchParams()
   const router = useRouter()
   const [loading, setLoading] = React.useState(false)
-  const [step, setStep] = React.useState<'form' | 'payment'>('form')
+
+  const flavorsParam = searchParams.get("flavors")
+  const selectedFlavors = flavorsParam ? decodeURIComponent(flavorsParam).split("|") : []
 
   const kit = KITS[id as keyof typeof KITS] || { name: "SABOR ENERGÉTICO", price: 29.99 }
 
@@ -58,6 +63,7 @@ export default function CheckoutPage() {
       kitId: id as string,
       kitName: kit.name,
       price: kit.price,
+      flavors: selectedFlavors.length > 0 ? selectedFlavors : undefined
     })
     
     if (result.success) {
@@ -74,9 +80,9 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-black scanline-container py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8 flex items-center justify-between">
-          <Link href="/" className="flex items-center text-accent hover:underline">
+          <Link href={id === 'kit-custom' ? '/custom-kit' : '/'} className="flex items-center text-accent hover:underline">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar para a Loja
+            {id === 'kit-custom' ? 'Mudar Sabores' : 'Voltar para a Loja'}
           </Link>
           <div className="font-headline text-xl font-bold tracking-tighter text-white">
             MANSÃO <span className="text-accent">MAROMBA</span>
@@ -180,11 +186,24 @@ export default function CheckoutPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-between items-start">
-                  <div>
-                    <h4 className="text-white font-bold">{kit.name}</h4>
-                    <p className="text-xs text-muted-foreground">Kit com 3 drinks - Mansão Maromba</p>
+                  <div className="space-y-2">
+                    <h4 className="text-white font-bold uppercase">{kit.name}</h4>
+                    {id === 'kit-custom' && selectedFlavors.length > 0 ? (
+                      <div className="space-y-1">
+                        <span className="text-[10px] text-accent font-bold uppercase tracking-widest flex items-center">
+                          <Boxes className="mr-1 h-3 w-3" /> Sabores Escolhidos:
+                        </span>
+                        <ul className="text-xs text-muted-foreground list-disc list-inside">
+                          {selectedFlavors.map((f, i) => (
+                            <li key={i}>{f}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : (
+                      <p className="text-xs text-muted-foreground">Kit com 3 drinks - Mansão Maromba</p>
+                    )}
                   </div>
-                  <span className="text-white font-bold">Qtd: 1</span>
+                  <span className="text-white font-bold shrink-0">Qtd: 1</span>
                 </div>
                 <Separator className="bg-border/50" />
                 <div className="flex justify-between items-center text-xl font-bold">

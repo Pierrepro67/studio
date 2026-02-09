@@ -15,6 +15,7 @@ const OrderSchema = z.object({
   city: z.string().min(2, "Cidade é obrigatória"),
   cep: z.string().min(8, "CEP inválido"),
   paymentMethod: z.enum(["pix", "credit_card"]),
+  flavors: z.array(z.string()).optional(),
 })
 
 export type OrderData = z.infer<typeof OrderSchema>
@@ -33,7 +34,6 @@ export async function createOrder(data: OrderData) {
 
   try {
     // Here we would use Firebase Admin or a service layer to save to Firestore
-    // For example: await db.collection('orders').add({ ...validatedFields.data, createdAt: new Date() })
     console.log("Saving order to Firebase:", validatedFields.data)
     
     return {

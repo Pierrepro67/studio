@@ -41,6 +41,12 @@
       "description": "Kit Plasma Burst - Mansão Maromba Original",
       "imageUrl": "https://scontent.fcpq17-1.fna.fbcdn.net/v/t39.30808-6/631261571_122107636293224584_5954399710752258002_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fbT_-o8GKJcQ7kNvwFtVRwM&_nc_oc=Adm0OUgD7M5uSyLHnN9Ex2Va9Wac6vr4Ork7w0QaetHKTywIaHUdJFccsfu68yML1wRbwTd9BV492c6Y83o3p8ig&_nc_zt=23&_nc_ht=scontent.fcpq17-1.fna&_nc_gid=x6Z7MzWJTg5PhM_xcJjuNg&oh=00_AftKtelLyNNVXl1hQw_0Vds1q2nYyIlaVk_VfGPDj3qtsg&oe=69901793",
       "imageHint": "maromba plasma"
+    },
+    {
+      "id": "kit-custom",
+      "description": "Monte Seu Kit Personalizado",
+      "imageUrl": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=600&h=800&fit=crop",
+      "imageHint": "cocktail selection"
     }
   ]
 }
