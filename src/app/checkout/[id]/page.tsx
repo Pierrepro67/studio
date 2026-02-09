@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -30,10 +29,10 @@ const checkoutSchema = z.object({
 type CheckoutForm = z.infer<typeof checkoutSchema>
 
 const KITS = {
-  "kit-gamma": { name: "GAMMA RAY PULSE", price: 189.90 },
-  "kit-void": { name: "VOID WALKER", price: 210.00 },
-  "kit-nebula": { name: "NEBULA SURGE", price: 195.50 },
-  "kit-plasma": { name: "PLASMA BURST", price: 225.00 },
+  "kit-gamma": { name: "GAMMA RAY PULSE", price: 29.99 },
+  "kit-void": { name: "VOID WALKER", price: 29.99 },
+  "kit-nebula": { name: "NEBULA SURGE", price: 29.99 },
+  "kit-plasma": { name: "PLASMA BURST", price: 29.99 },
 }
 
 export default function CheckoutPage() {

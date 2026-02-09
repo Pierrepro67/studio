@@ -1,4 +1,3 @@
-
 import { Banner } from "@/components/Banner"
 import { KitCard } from "@/components/KitCard"
 import { PlaceHolderImages } from "@/lib/placeholder-images"
@@ -8,25 +7,25 @@ const KITS = [
     id: "kit-gamma",
     name: "GAMMA RAY PULSE",
     description: "Uma explosão radioativa de sabores cítricos e energia alienígena. Perfeito para quem busca alta intensidade.",
-    price: 189.90,
+    price: 29.99,
   },
   {
     id: "kit-void",
     name: "VOID WALKER",
     description: "Sinta o mistério do vazio profundo com notas de frutas roxas e uma finalização suave e sombria.",
-    price: 210.00,
+    price: 29.99,
   },
   {
     id: "kit-nebula",
     name: "NEBULA SURGE",
     description: "Uma corrente elétrica de sabor que ilumina seus sentidos. Refrescante e hipnotizante.",
-    price: 195.50,
+    price: 29.99,
   },
   {
     id: "kit-plasma",
     name: "PLASMA BURST",
     description: "O calor das estrelas em cada gole. Intensidade total com um toque metálico e futurista.",
-    price: 225.00,
+    price: 29.99,
   }
 ]
 
