@@ -29,10 +29,10 @@ const checkoutSchema = z.object({
 type CheckoutForm = z.infer<typeof checkoutSchema>
 
 const KITS = {
-  "kit-gamma": { name: "GAMMA RAY PULSE", price: 29.99 },
-  "kit-void": { name: "VOID WALKER", price: 29.99 },
-  "kit-nebula": { name: "NEBULA SURGE", price: 29.99 },
-  "kit-plasma": { name: "PLASMA BURST", price: 29.99 },
+  "kit-gamma": { name: "SABOR ENERGÉTICO", price: 29.99 },
+  "kit-void": { name: "SABOR ENERGÉTICO", price: 29.99 },
+  "kit-nebula": { name: "SABOR ENERGÉTICO", price: 29.99 },
+  "kit-plasma": { name: "SABOR ENERGÉTICO", price: 29.99 },
 }
 
 export default function CheckoutPage() {
@@ -41,7 +41,7 @@ export default function CheckoutPage() {
   const [loading, setLoading] = React.useState(false)
   const [step, setStep] = React.useState<'form' | 'payment'>('form')
 
-  const kit = KITS[id as keyof typeof KITS] || { name: "Kit Desconhecido", price: 0 }
+  const kit = KITS[id as keyof typeof KITS] || { name: "SABOR ENERGÉTICO", price: 29.99 }
 
   const { register, handleSubmit, watch, formState: { errors, isValid } } = useForm<CheckoutForm>({
     resolver: zodResolver(checkoutSchema),

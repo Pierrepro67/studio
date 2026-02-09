@@ -5,25 +5,25 @@ import { PlaceHolderImages } from "@/lib/placeholder-images"
 const KITS = [
   {
     id: "kit-gamma",
-    name: "GAMMA RAY PULSE",
+    name: "SABOR ENERGÉTICO",
     description: "Uma explosão radioativa de sabores cítricos e energia alienígena. Perfeito para quem busca alta intensidade.",
     price: 29.99,
   },
   {
     id: "kit-void",
-    name: "VOID WALKER",
+    name: "SABOR ENERGÉTICO",
     description: "Sinta o mistério do vazio profundo com notas de frutas roxas e uma finalização suave e sombria.",
     price: 29.99,
   },
   {
     id: "kit-nebula",
-    name: "NEBULA SURGE",
+    name: "SABOR ENERGÉTICO",
     description: "Uma corrente elétrica de sabor que ilumina seus sentidos. Refrescante e hipnotizante.",
     price: 29.99,
   },
   {
     id: "kit-plasma",
-    name: "PLASMA BURST",
+    name: "SABOR ENERGÉTICO",
     description: "O calor das estrelas em cada gole. Intensidade total com um toque metálico e futurista.",
     price: 29.99,
   }
