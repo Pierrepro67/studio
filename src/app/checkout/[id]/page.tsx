@@ -147,6 +147,12 @@ export default function CheckoutPage() {
                       <Input id="city" {...register("city")} className="bg-black/50 border-border focus:border-accent text-white" />
                       {errors.city && <p className="text-red-500 text-xs">{errors.city.message}</p>}
                     </div>
+
+                    <div className="space-y-2 flex items-end pb-1">
+                      <p className="text-[10px] md:text-xs text-accent/80 italic leading-tight border-l-2 border-accent/20 pl-3 py-1">
+                        Todas as informações sobre sua entrega e atualizações do pedido serão enviadas para o seu WhatsApp.
+                      </p>
+                    </div>
                   </div>
 
                   <Separator className="bg-border/50" />
