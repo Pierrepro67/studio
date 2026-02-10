@@ -14,25 +14,25 @@ const KITS = [
     id: "kit-gamma",
     name: "SABOR ENERGÉTICO",
     description: "Uma explosão radioativa de sabores cítricos e energia alienígena. Perfeito para quem busca alta intensidade.",
-    price: 29.99,
+    price: 39.99,
   },
   {
     id: "kit-void",
     name: "SABOR ENERGÉTICO",
     description: "Sinta o mistério do vazio profundo com notas de frutas roxas e uma finalização suave e sombria.",
-    price: 29.99,
+    price: 39.99,
   },
   {
     id: "kit-nebula",
     name: "SABOR ENERGÉTICO",
     description: "Uma corrente elétrica de sabor que ilumina seus sentidos. Refrescante e hipnotizante.",
-    price: 29.99,
+    price: 39.99,
   },
   {
     id: "kit-plasma",
     name: "SABOR ENERGÉTICO",
     description: "O calor das estrelas em cada gole. Intensidade total com um toque metálico e futurista.",
-    price: 29.99,
+    price: 39.99,
   }
 ]
 
@@ -111,7 +111,7 @@ export default function Home() {
             <CardFooter className="flex flex-col gap-4">
               <div className="w-full flex justify-between items-center">
                 <span className="text-2xl font-bold text-white">
-                  R$ 29,99
+                  R$ 39,99
                 </span>
                 <div className="h-px flex-grow mx-4 bg-border" />
               </div>
