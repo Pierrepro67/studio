@@ -1,18 +1,20 @@
 
 "use client"
 
+import { Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, Package, Rocket, Home } from "lucide-react"
 
-export default function SuccessPage() {
+function SuccessContent() {
   const searchParams = useSearchParams()
-  const orderId = searchParams.get('orderId')
+  const orderId = searchParams.get("orderId")
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center p-4 scanline-container">
       <div className="max-w-md w-full bg-card border border-accent/30 rounded-xl p-8 text-center space-y-6 animate-fade-in shadow-[0_0_50px_rgba(57,255,20,0.1)]">
+        
         <div className="flex justify-center">
           <div className="relative">
             <CheckCircle2 className="h-24 w-24 text-accent animate-bounce" />
@@ -25,10 +27,16 @@ export default function SuccessPage() {
         </h1>
         
         <div className="space-y-2">
-          <p className="text-muted-foreground">Envio iniciado para sua coordenada terrestre.</p>
+          <p className="text-muted-foreground">
+            Envio iniciado para sua coordenada terrestre.
+          </p>
           <div className="bg-black/50 p-3 rounded border border-border">
-            <span className="text-xs text-muted-foreground uppercase tracking-widest block mb-1">Cód. Transmissão:</span>
-            <span className="text-accent font-mono text-xl tracking-widest">{orderId || "TRANS-M-001"}</span>
+            <span className="text-xs text-muted-foreground uppercase tracking-widest block mb-1">
+              Cód. Transmissão:
+            </span>
+            <span className="text-accent font-mono text-xl tracking-widest">
+              {orderId || "TRANS-M-001"}
+            </span>
           </div>
         </div>
 
@@ -56,6 +64,15 @@ export default function SuccessPage() {
   )
 }
 
-function Separator({ className }: { className?: string }) {
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div className="text-white text-center p-10">Carregando...</div>}>
+      <SuccessContent />
+    </Suspense>
+  )
+}
+
+function Separator({ className }) {
   return <div className={`h-px w-full ${className}`} />
 }
+
